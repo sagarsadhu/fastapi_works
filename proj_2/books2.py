@@ -61,12 +61,9 @@ async def negative_number_exception_handler(
 #     return {"username": username, "password": password}
 
 @app.post("/books/login")
-async def book_login(book_id: UUID, username: str = Header(), password: str = Header()):
+async def book_login(book_id: int, username: str = Header(None), password: str = Header(None)):
     if username == "FastAPIUser" and password == "test1234!":
-        for x in BOOKS:
-            if x.id == book_id:
-                return x
-
+        return BOOKS[book_id - 1]
     return "Invalid User"
 
 
