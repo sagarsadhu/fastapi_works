@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7af9fa1f-9a63-43ab-abf5-7102e0bad6e3" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo_project/auth.py" beforeDir="false" afterPath="$PROJECT_DIR$/todo_project/routers/auth.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/todo_project/database.py" beforeDir="false" afterPath="$PROJECT_DIR$/todo_project/database.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/todo_project/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/todo_project/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/todo_project/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/todo_project/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo_project/todos.db" beforeDir="false" afterPath="$PROJECT_DIR$/todo_project/todos.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +42,11 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/todo_project/routers" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="fastapi_works" />
@@ -76,6 +80,9 @@
       <updated>1664592634686</updated>
     </task>
     <servers />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="requirements.txt" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">

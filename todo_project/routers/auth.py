@@ -1,9 +1,13 @@
+import sys
+
+sys.path.append("..")
+
 from datetime import datetime, timedelta
 from typing import Optional
 
 import models
 from database import SessionLocal, engine
-from fastapi import Depends, FastAPI, HTTPException, status
+from fastapi import Depends, HTTPException, status, APIRouter
 from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
 from jose import JWTError, jwt
 from passlib.context import CryptContext
@@ -30,7 +34,7 @@ models.Base.metadata.create_all(bind=engine)
 
 oauth2bearer = OAuth2PasswordBearer(tokenUrl="token")
 
-app = FastAPI()
+router = APIRouter()
 
 
 def get_db():
@@ -68,7 +72,7 @@ def create_access_token(
     if expires_delta:
         expire = datetime.utcnow() + expires_delta
     else:
-        expire = datetime.utcnow() + timedelta(minutes=15)
+        expire = datetime.utcnow() + timedelta(minutes=55)
     encode.update({"exp": expire})
     return jwt.encode(encode, SECRET_KEY, algorithm=ALGORITHM)
 
@@ -79,8 +83,6 @@ async def get_current_user(token: str = Depends(oauth2bearer)):
         username: str = payload.get("sub")  # type: ignore
         user_id: int = payload.get("id")  # type: ignore
 
-        print(payload)
-
         if user_id is None or username is None:
             raise get_user_exception()
         return {"username": username, "id": user_id}
@@ -89,7 +91,7 @@ async def get_current_user(token: str = Depends(oauth2bearer)):
         raise get_user_exception()
 
 
-@app.post("/create/user")
+@router.post("/create/user")
 async def create_new_user(create_user: CreateUser, db: Session = Depends(get_db)):
     create_user_model = models.Users()
     create_user_model.email = create_user.email  # type: ignore
@@ -108,7 +110,7 @@ async def create_new_user(create_user: CreateUser, db: Session = Depends(get_db)
     return {"status_code": 201, "detail": "User was created successfully"}
 
 
-@app.post("/token")
+@router.post("/token")
 async def login_for_access_token(
         form_data: OAuth2PasswordRequestForm = Depends(), db: Session = Depends(get_db)
 ):
@@ -117,7 +119,7 @@ async def login_for_access_token(
     if user is False:
         raise token_exception()
 
-    token_expires = timedelta(minutes=20)
+    token_expires = timedelta(minutes=60)
     token = create_access_token(user.username, user.id, expires_delta=token_expires)
 
     return {"token": token}
