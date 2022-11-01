@@ -1,7 +1,7 @@
 from fastapi import FastAPI, Depends
 import models
 from database import engine
-from routers import auth, todos, users
+from routers import auth, todos, users, address
 from company import companyapis, dependencies
 
 app = FastAPI()
@@ -24,6 +24,12 @@ app.include_router(
     users.router,
     prefix="/users",
     tags=['users'],
+    responses={404: {"description": "Not found"}}
+)
+app.include_router(
+    address.router,
+    prefix="/address",
+    tags=['address'],
     responses={404: {"description": "Not found"}}
 )
 app.include_router(

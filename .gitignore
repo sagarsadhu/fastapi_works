@@ -131,3 +131,4 @@ dmypy.json
 
 # local constants file
 todo_project/constants.py
+todo_project/alembic.ini
