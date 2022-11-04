@@ -10,9 +10,8 @@ import models
 from database import SessionLocal, engine
 from fastapi import Depends, HTTPException, status, APIRouter, Request, Response, Form
 from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
-from jose import JWTError, jwt
+from jose import JWTError, jwt, ExpiredSignatureError
 from passlib.context import CryptContext
-from pydantic import BaseModel
 from sqlalchemy.orm import Session
 from fastapi.templating import Jinja2Templates
 from fastapi.responses import HTMLResponse
@@ -97,6 +96,8 @@ async def get_current_user(request: Request):
         if user_id is None or username is None:
             logout(request)
         return {"username": username, "id": user_id}
+    except ExpiredSignatureError:
+        logout(request)
     except JWTError:
         raise HTTPException(status_code=404, detail="Not Found")
 

@@ -2,18 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7af9fa1f-9a63-43ab-abf5-7102e0bad6e3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/todo_project/templates/add-todo.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/todo_project/templates/edit-todo.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/todo_project/templates/layout.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/todo_project/templates/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/todo_project/templates/register.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/todo_project/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/todo_project/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo_project/routers/address.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/todo_project/routers/auth.py" beforeDir="false" afterPath="$PROJECT_DIR$/todo_project/routers/auth.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo_project/routers/todos.py" beforeDir="false" afterPath="$PROJECT_DIR$/todo_project/routers/todos.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo_project/routers/users.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo_project/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/todo_project/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo_project/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/todo_project/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo_project/templates/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/todo_project/templates/navbar.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,8 +16,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
